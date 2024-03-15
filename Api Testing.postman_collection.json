@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "8829449a-da62-47b1-aa3c-60b88ce5ea9b",
+		"name": "Api Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"salman1@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"name\":\"salman\",\r\n    \"role\":\"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/signup",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MTAwNGUwMWU4MTdlYjBiZWQxOWQ0OCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjc5MzcyNjc1LCJleHAiOjE2Nzk0NTkwNzV9.yg18GxmC31CTvn1PhdirVsxlZLqi_-L6glohvR0bz3c",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"email\": \"salman1@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/user/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG1hbjFAZ21haWwuY29tIiwiX2lkIjoiNjQ1MjhlNmE1NDZiZTcwMjU0ZDA0Yzc2Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgzMTMyMDI0LCJleHAiOjE2ODMxMzU2MjR9.hF4zgugoR5flLGSj0NuI-s7q4PjeKxZPcoB9g2AHjS0",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "pen",
+							"type": "default"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Salman Iqbal/Pictures/Screenshot 2023-02-01 143220.png"
+						},
+						{
+							"key": "price",
+							"value": "40",
+							"type": "default"
+						},
+						{
+							"key": "description",
+							"value": "This is pen",
+							"type": "default"
+						},
+						{
+							"key": "category",
+							"value": "office",
+							"type": "default"
+						},
+						{
+							"key": "quantity",
+							"value": "5000",
+							"type": "default"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/item/addItem",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"item",
+						"addItem"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/api/item/getAllItems",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"item",
+						"getAllItems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get item",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:3000/api/item/64528f98ff0dd71b52fae206",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"item",
+						"64528f98ff0dd71b52fae206"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "order add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbG1hbjFAZ21haWwuY29tIiwiX2lkIjoiNjQ1MjhlNmE1NDZiZTcwMjU0ZDA0Yzc2Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjgzMTM2MjU2LCJleHAiOjE2ODMxMzk4NTZ9.n0yspO95OMKlTmMIDhJKpx8rlu57sdmh-HBMKGSx7Xo",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"items\":[{\"item\":\"64528f98ff0dd71b52fae206\" , \"quantity\":2} , {\"item\":\"64529a1fe7979ea1ca11cdb0\" , \"quantity\":2} ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/order/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"order",
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "jwt",
+		"jwt": [
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "algorithm",
+				"value": "HS256",
+				"type": "string"
+			},
+			{
+				"key": "isSecretBase64Encoded",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "payload",
+				"value": "{}",
+				"type": "string"
+			},
+			{
+				"key": "headerPrefix",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "queryParamKey",
+				"value": "token",
+				"type": "string"
+			},
+			{
+				"key": "header",
+				"value": "{}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "localhost:3000",
+			"type": "default"
+		}
+	]
+}
